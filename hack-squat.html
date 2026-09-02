@@ -1,1 +1,730 @@
+<!DOCTYPE html>
+<html lang="de">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hack Squat</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background-color: #D1DCFF;
+
+      font-family: 'Fredoka', sans-serif;
+      color: #5F6F9F;
+    }
+
+
+    /* =========================
+       GROSSE ÜBERSCHRIFT
+       ========================= */
+
+    .site-title {
+      margin: 0;
+
+      padding-top: 55px;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      text-align: center;
+
+      color: #91A2D9;
+
+      font-size: clamp(55px, 6.5vw, 90px);
+      font-weight: 700;
+
+      letter-spacing: -2px;
+      line-height: 0.95;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       GESAMTER SEITENINHALT
+       ========================= */
+
+    .page-content {
+      width: min(1450px, 94%);
+
+      margin: 55px auto 80px;
+    }
+
+
+    /* =========================
+       2/3 + 1/3 LAYOUT
+       ========================= */
+
+    .exercise-layout {
+      display: grid;
+
+      grid-template-columns: 2fr 1fr;
+
+      gap: 42px;
+
+      align-items: start;
+    }
+
+
+    /* =========================
+       LINKE SPALTE
+       ========================= */
+
+    .info-column {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 28px;
+    }
+
+
+    /* =========================
+       ALLGEMEINE CARD
+       ========================= */
+
+    .info-card {
+      padding: 32px;
+
+      background: rgba(255, 255, 255, 0.30);
+
+      border: 2px solid rgba(145, 162, 217, 0.25);
+
+      border-radius: 34px;
+
+      box-shadow:
+        0 10px 30px rgba(104, 121, 170, 0.08);
+    }
+
+
+    /* =========================
+       WARUM DIESE ÜBUNG?
+       ========================= */
+
+    .why-card {
+      padding: 36px 40px;
+    }
+
+
+    /* =========================
+       CARD-ÜBERSCHRIFTEN
+       ========================= */
+
+    .card-title {
+      margin: 0 0 17px;
+
+      color: #91A2D9;
+
+      font-size: 29px;
+      font-weight: 700;
+
+      line-height: 1.05;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       NORMALER TEXT
+       ========================= */
+
+    .card-text {
+      margin: 0;
+
+      color: #64739F;
+
+      font-size: 18px;
+      font-weight: 500;
+
+      line-height: 1.55;
+    }
+
+    .card-text strong {
+      color: #91A2D9;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       2 x 2 INFO-GRID
+       ========================= */
+
+    .detail-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 28px;
+    }
+
+
+    /* =========================
+       LISTEN
+       ========================= */
+
+    .info-list {
+      margin: 0;
+
+      padding-left: 22px;
+
+      color: #64739F;
+
+      font-size: 17px;
+      font-weight: 500;
+
+      line-height: 1.55;
+    }
+
+    .info-list li {
+      margin-bottom: 10px;
+    }
+
+    .info-list li:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* =========================
+       RECHTE VIDEO-SPALTE
+       ========================= */
+
+    .video-column {
+      position: sticky;
+
+      top: 30px;
+    }
+
+
+    /* =========================
+       VIDEO-PLATZHALTER
+       ========================= */
+
+    .video-placeholder {
+      width: 100%;
+
+      min-height: 620px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+
+      background: rgba(255, 255, 255, 0.24);
+
+      border: 2px dashed rgba(145, 162, 217, 0.50);
+
+      border-radius: 38px;
+
+      box-shadow:
+        0 10px 30px rgba(104, 121, 170, 0.08);
+
+      text-align: center;
+    }
+
+    .video-placeholder-text {
+      color: #91A2D9;
+
+      font-size: 24px;
+      font-weight: 700;
+
+      line-height: 1.25;
+
+      text-transform: uppercase;
+
+      opacity: 0.75;
+    }
+
+
+    /* =========================
+       BODYBUILDING TAKEAWAY
+       ========================= */
+
+    .takeaway {
+      margin-top: 42px;
+
+      padding: 38px 42px;
+
+      background: rgba(255, 255, 255, 0.38);
+
+      border: 2px solid rgba(145, 162, 217, 0.30);
+
+      border-radius: 38px;
+
+      box-shadow:
+        0 12px 32px rgba(104, 121, 170, 0.10);
+    }
+
+    .takeaway-title {
+      margin: 0 0 18px;
+
+      text-align: center;
+
+      color: #91A2D9;
+
+      font-size: 32px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+    }
+
+    .takeaway-text {
+      width: min(900px, 100%);
+
+      margin: 0 auto;
+
+      text-align: center;
+
+      color: #64739F;
+
+      font-size: 19px;
+      font-weight: 500;
+
+      line-height: 1.55;
+    }
+
+    .takeaway-text strong {
+      color: #91A2D9;
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       ZURÜCK-LINK
+       ========================= */
+
+    .back-link-wrapper {
+      margin-top: 38px;
+
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-block;
+
+      color: #91A2D9;
+
+      font-size: 18px;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      transform: translateX(-5px);
+
+      opacity: 0.75;
+    }
+
+
+    /* =========================
+       TABLET
+       ========================= */
+
+    @media (max-width: 1050px) {
+
+      .exercise-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .video-column {
+        position: static;
+
+        order: -1;
+      }
+
+      .video-placeholder {
+        min-height: 450px;
+
+        width: min(600px, 100%);
+
+        margin: 0 auto;
+      }
+
+    }
+
+
+    /* =========================
+       HANDY
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      .site-title {
+        padding-top: 40px;
+
+        font-size: 11.5vw;
+      }
+
+      .page-content {
+        width: 92%;
+
+        margin-top: 38px;
+      }
+
+      .exercise-layout {
+        gap: 28px;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-card,
+      .why-card {
+        padding: 27px;
+      }
+
+      .card-title {
+        font-size: 25px;
+      }
+
+      .card-text {
+        font-size: 17px;
+      }
+
+      .info-list {
+        font-size: 16px;
+      }
+
+      .video-placeholder {
+        min-height: 380px;
+
+        border-radius: 30px;
+      }
+
+      .video-placeholder-text {
+        font-size: 20px;
+      }
+
+      .takeaway {
+        padding: 30px 26px;
+      }
+
+      .takeaway-title {
+        font-size: 27px;
+      }
+
+      .takeaway-text {
+        font-size: 17px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <h1 class="site-title">
+    HACK SQUAT
+  </h1>
+
+
+  <main class="page-content">
+
+
+    <div class="exercise-layout">
+
+
+      <!-- =========================
+           LINKE SPALTE
+           ========================= -->
+
+      <section class="info-column">
+
+
+        <!-- WARUM DIESE ÜBUNG? -->
+
+        <div class="info-card why-card">
+
+          <h2 class="card-title">
+            Warum diese Übung?
+          </h2>
+
+          <p class="card-text">
+            Der <strong>Hack Squat</strong> ist eine geführte
+            Mehrgelenksübung, die hohe externe Lasten mit großer
+            Kniebeugung kombinieren kann. Durch die stabile Maschinenführung
+            muss weniger Aufmerksamkeit auf Balance und freie Stabilisation
+            verwendet werden, wodurch der Quadrizeps sehr hart belastet
+            werden kann.
+            <br><br>
+            Der <strong>M. rectus femoris</strong> beteiligt sich an der
+            Kniestreckung, allerdings übernimmt bei Hack Squats der gesamte
+            Quadrizeps einen großen Teil der Arbeit. Die Übung ist deshalb
+            weniger ein spezifischer Rectus-femoris-Bias und vielmehr ein
+            starker Compound für allgemeine Quad-Masse.
+          </p>
+
+        </div>
+
+
+        <!-- 2 x 2 GRID -->
+
+        <div class="detail-grid">
+
+
+          <!-- SETUP -->
+
+          <div class="info-card">
+
+            <h2 class="card-title">
+              Setup
+            </h2>
+
+            <ul class="info-list">
+
+              <li>
+                Rücken und Becken vollständig und stabil am Rückenpolster
+                positionieren.
+              </li>
+
+              <li>
+                Füße ungefähr schulterbreit oder leicht enger auf der
+                Plattform platzieren.
+              </li>
+
+              <li>
+                Die Fußposition so wählen, dass eine große Kniebeugung
+                möglich ist, ohne dass die Fersen abheben.
+              </li>
+
+              <li>
+                Knie in Richtung der Fußspitzen führen und eine individuell
+                stabile Beinachse halten.
+              </li>
+
+              <li>
+                Sicherheitsstopps beziehungsweise Maschinenbegrenzung vor dem
+                schweren Satz passend einstellen.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- AUSFÜHRUNG -->
+
+          <div class="info-card">
+
+            <h2 class="card-title">
+              Ausführung
+            </h2>
+
+            <ul class="info-list">
+
+              <li>
+                Das Gewicht kontrolliert ablassen und die Knie zunehmend
+                beugen.
+              </li>
+
+              <li>
+                Rücken und Becken während der Bewegung am Polster halten.
+              </li>
+
+              <li>
+                Die Knie kontrolliert nach vorne und in Richtung der
+                Fußspitzen bewegen lassen.
+              </li>
+
+              <li>
+                Einen möglichst großen schmerzfreien Bewegungsumfang nutzen,
+                sofern die Beckenposition stabil bleibt.
+              </li>
+
+              <li>
+                Aus der unteren Position aktiv über die Beine wieder nach
+                oben drücken.
+              </li>
+
+              <li>
+                Die Wiederholung oben kontrolliert beenden, ohne die Knie
+                aggressiv durchzuschlagen.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- WAS SOLLTEST DU SPÜREN? -->
+
+          <div class="info-card">
+
+            <h2 class="card-title">
+              Was solltest du spüren?
+            </h2>
+
+            <ul class="info-list">
+
+              <li>
+                Eine starke Belastung über die gesamte Vorderseite des
+                Oberschenkels.
+              </li>
+
+              <li>
+                Mit zunehmender Kniebeugung sollte der Quadrizeps deutlich
+                mehr Spannung übernehmen.
+              </li>
+
+              <li>
+                Auch Gluteus und Adduktoren können je nach Tiefe und
+                Fußposition mitarbeiten.
+              </li>
+
+              <li>
+                Der Satz sollte primär durch lokale Ermüdung der Beine und
+                nicht durch Balance oder Rückenstabilität limitiert werden.
+              </li>
+
+              <li>
+                Hohe muskuläre Anstrengung im Quadrizeps ist erwünscht;
+                stechender Schmerz im Knie oder unteren Rücken nicht.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- TYPISCHE FEHLER -->
+
+          <div class="info-card">
+
+            <h2 class="card-title">
+              Typische Fehler
+            </h2>
+
+            <ul class="info-list">
+
+              <li>
+                Zu viel Gewicht verwenden und dadurch nur noch sehr flache
+                Wiederholungen ausführen.
+              </li>
+
+              <li>
+                Die Füße unnötig weit oben platzieren und dadurch die
+                Bewegung stärker hüftdominant machen.
+              </li>
+
+              <li>
+                Knie und Füße nicht kontrolliert in derselben Richtung
+                bewegen lassen.
+              </li>
+
+              <li>
+                In der unteren Position das Becken stark vom Polster
+                einrollen lassen.
+              </li>
+
+              <li>
+                Die exzentrische Phase unkontrolliert fallen lassen.
+              </li>
+
+              <li>
+                Die obere Position jedes Mal aggressiv in die Kniegelenke
+                hinein durchschlagen.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           RECHTE VIDEO-SPALTE
+           ========================= -->
+
+      <aside class="video-column">
+
+        <div class="video-placeholder">
+
+          <div class="video-placeholder-text">
+            Ausführungsvideo<br>
+            kommt hier rein
+          </div>
+
+        </div>
+
+      </aside>
+
+
+    </div>
+
+
+    <!-- =========================
+         BODYBUILDING TAKEAWAY
+         ========================= -->
+
+    <section class="takeaway">
+
+      <h2 class="takeaway-title">
+        Bodybuilding Takeaway
+      </h2>
+
+      <p class="takeaway-text">
+        Der Hack Squat ist vor allem ein
+        <strong>massiver Quad-Compound</strong>: hohe Stabilität, gut
+        kontrollierbare Progression und die Möglichkeit, den Quadrizeps mit
+        hoher Last und großer Kniebeugung auszubelasten. Für den
+        M. rectus femoris ist er weniger spezifisch als direkte
+        Kniestreckungsübungen, bleibt aber eine hervorragende Basisübung für
+        den Aufbau des gesamten Quadrizeps.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         ZURÜCK
+         ========================= -->
+
+    <div class="back-link-wrapper">
+
+      <a
+        class="back-link"
+        href="rectus-femoris.html"
+      >
+        ← zurück zu M. rectus femoris
+      </a>
+
+    </div>
+
+
+  </main>
+
+</body>
+
+</html>
