@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Welcome</title>
+  <title>Was sollen wir machen?</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,8 @@
   >
 
   <style>
+
+    /* GRUNDEINSTELLUNGEN */
 
     * {
       box-sizing: border-box;
@@ -29,11 +31,390 @@
       font-family: 'Fredoka', sans-serif;
     }
 
-  </style>
 
+    /* ÜBERSCHRIFT */
+
+    .site-title {
+      margin: 0;
+
+      padding-top: 55px;
+
+      text-align: center;
+
+      color: #91A2D9;
+
+      font-size: clamp(55px, 7vw, 95px);
+      font-weight: 700;
+
+      letter-spacing: -2px;
+      line-height: 0.95;
+
+      text-transform: uppercase;
+    }
+
+
+    /* HERZ-GRID */
+
+    .heart-grid {
+      width: min(1100px, 90%);
+
+      margin: 90px auto 0;
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      column-gap: 35px;
+      row-gap: 45px;
+
+      justify-items: center;
+    }
+
+
+    /* EINZELNES HERZ */
+
+    .heart-button {
+      position: relative;
+
+      display: block;
+
+      width: 230px;
+      height: 205px;
+
+      background: transparent;
+
+      text-decoration: none;
+
+      cursor: pointer;
+
+      transition: transform 0.2s ease;
+    }
+
+
+    /* HERZFORM */
+
+    .heart-button svg {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+    }
+
+
+    /* TEXT IM HERZ */
+
+    .heart-text {
+      position: absolute;
+
+      top: 46%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: 150px;
+
+      color: white;
+
+      font-size: 24px;
+      font-weight: 600;
+
+      line-height: 1;
+
+      text-align: center;
+
+      z-index: 2;
+    }
+
+
+    /* HOVER */
+
+    .heart-button:hover {
+      transform: scale(1.08);
+    }
+
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+
+      .heart-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        width: 600px;
+        max-width: 90%;
+      }
+
+    }
+
+
+    /* HANDY */
+
+    @media (max-width: 600px) {
+
+      .site-title {
+        padding-top: 40px;
+
+        font-size: 13vw;
+      }
+
+      .heart-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        width: 95%;
+
+        margin-top: 60px;
+
+        column-gap: 10px;
+        row-gap: 25px;
+      }
+
+      .heart-button {
+        width: 165px;
+        height: 150px;
+      }
+
+      .heart-text {
+        width: 110px;
+
+        font-size: 19px;
+      }
+
+    }
+
+  </style>
 </head>
 
+
 <body>
+
+  <h1 class="site-title">
+    WAS SOLLEN WIR MACHEN?
+  </h1>
+
+
+  <div class="heart-grid">
+
+
+    <!-- QUADS -->
+
+    <a class="heart-button" href="#" aria-label="Quads">
+
+      <svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          fill="#91A2D9"
+          d="
+            M250 420
+            C220 390 45 275 45 135
+            C45 55 105 20 165 20
+            C205 20 235 43 250 75
+            C265 43 295 20 335 20
+            C395 20 455 55 455 135
+            C455 275 280 390 250 420
+            Z
+          "
+        />
+
+      </svg>
+
+      <span class="heart-text">QUADS</span>
+
+    </a>
+
+
+    <!-- HAMMIES -->
+
+    <a class="heart-button" href="#" aria-label="Hammies">
+
+      <svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          fill="#91A2D9"
+          d="
+            M250 420
+            C220 390 45 275 45 135
+            C45 55 105 20 165 20
+            C205 20 235 43 250 75
+            C265 43 295 20 335 20
+            C395 20 455 55 455 135
+            C455 275 280 390 250 420
+            Z
+          "
+        />
+
+      </svg>
+
+      <span class="heart-text">HAMMIES</span>
+
+    </a>
+
+
+    <!-- POPO -->
+
+    <a class="heart-button" href="#" aria-label="Popo">
+
+      <svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          fill="#91A2D9"
+          d="
+            M250 420
+            C220 390 45 275 45 135
+            C45 55 105 20 165 20
+            C205 20 235 43 250 75
+            C265 43 295 20 335 20
+            C395 20 455 55 455 135
+            C455 275 280 390 250 420
+            Z
+          "
+        />
+
+      </svg>
+
+      <span class="heart-text">POPO</span>
+
+    </a>
+
+
+    <!-- BAUCH -->
+
+    <a class="heart-button" href="#" aria-label="Bauch">
+
+      <svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          fill="#91A2D9"
+          d="
+            M250 420
+            C220 390 45 275 45 135
+            C45 55 105 20 165 20
+            C205 20 235 43 250 75
+            C265 43 295 20 335 20
+            C395 20 455 55 455 135
+            C455 275 280 390 250 420
+            Z
+          "
+        />
+
+      </svg>
+
+      <span class="heart-text">BAUCH</span>
+
+    </a>
+
+
+    <!-- BRUST -->
+
+    <a class="heart-button" href="#" aria-label="Brust">
+
+      <svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          fill="#91A2D9"
+          d="
+            M250 420
+            C220 390 45 275 45 135
+            C45 55 105 20 165 20
+            C205 20 235 43 250 75
+            C265 43 295 20 335 20
+            C395 20 455 55 455 135
+            C455 275 280 390 250 420
+            Z
+          "
+        />
+
+      </svg>
+
+      <span class="heart-text">BRUST</span>
+
+    </a>
+
+
+    <!-- RÜCKEN -->
+
+    <a class="heart-button" href="#" aria-label="Rücken">
+
+      <svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          fill="#91A2D9"
+          d="
+            M250 420
+            C220 390 45 275 45 135
+            C45 55 105 20 165 20
+            C205 20 235 43 250 75
+            C265 43 295 20 335 20
+            C395 20 455 55 455 135
+            C455 275 280 390 250 420
+            Z
+          "
+        />
+
+      </svg>
+
+      <span class="heart-text">RÜCKEN</span>
+
+    </a>
+
+
+    <!-- SCHULTERN -->
+
+    <a class="heart-button" href="#" aria-label="Schultern">
+
+      <svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          fill="#91A2D9"
+          d="
+            M250 420
+            C220 390 45 275 45 135
+            C45 55 105 20 165 20
+            C205 20 235 43 250 75
+            C265 43 295 20 335 20
+            C395 20 455 55 455 135
+            C455 275 280 390 250 420
+            Z
+          "
+        />
+
+      </svg>
+
+      <span class="heart-text">SCHULTERN</span>
+
+    </a>
+
+
+    <!-- ARME -->
+
+    <a class="heart-button" href="#" aria-label="Arme">
+
+      <svg viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+
+        <path
+          fill="#91A2D9"
+          d="
+            M250 420
+            C220 390 45 275 45 135
+            C45 55 105 20 165 20
+            C205 20 235 43 250 75
+            C265 43 295 20 335 20
+            C395 20 455 55 455 135
+            C455 275 280 390 250 420
+            Z
+          "
+        />
+
+      </svg>
+
+      <span class="heart-text">ARME</span>
+
+    </a>
+
+
+  </div>
 
 </body>
 
