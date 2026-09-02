@@ -9,9 +9,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* GRUNDEINSTELLUNGEN */
 
     * {
       box-sizing: border-box;
@@ -20,7 +26,9 @@
     body {
       margin: 0;
       min-height: 100vh;
+
       background-color: #D1DCFF;
+
       font-family: 'Fredoka', sans-serif;
     }
 
@@ -29,6 +37,7 @@
 
     .site-title {
       margin: 0;
+
       padding-top: 55px;
 
       text-align: center;
@@ -45,79 +54,102 @@
     }
 
 
-    /* HERZ */
+    /* HERZ-BEREICH */
 
     .heart-wrapper {
       display: flex;
+
       justify-content: center;
       align-items: center;
 
-      margin-top: 180px;
+      margin-top: 110px;
     }
 
+
+    /* HERZ */
+
     .heart-button {
-      position: relative;
+      width: 430px;
+      height: 390px;
 
-      width: 260px;
-      height: 230px;
-
-      background: #91A2D9;
+      padding: 0;
 
       border: none;
+
+      background-color: #91A2D9;
+
+      clip-path: path(
+        "M 215 375
+         C 190 350, 35 235, 35 125
+         C 35 50, 90 15, 145 15
+         C 180 15, 205 35, 215 60
+         C 225 35, 250 15, 285 15
+         C 340 15, 395 50, 395 125
+         C 395 235, 240 350, 215 375
+         Z"
+      );
+
       cursor: pointer;
 
-      transform: rotate(-45deg);
-
       display: flex;
+
       justify-content: center;
       align-items: center;
 
       transition: transform 0.2s ease;
     }
 
-    .heart-button::before,
-    .heart-button::after {
-      content: "";
 
-      position: absolute;
-
-      width: 260px;
-      height: 230px;
-
-      background: #91A2D9;
-
-      border-radius: 50%;
-    }
-
-    .heart-button::before {
-      top: -115px;
-      left: 0;
-    }
-
-    .heart-button::after {
-      top: 0;
-      left: 130px;
-    }
+    /* TEXT IM HERZ */
 
     .heart-button span {
-      position: relative;
-      z-index: 2;
+      display: block;
 
-      transform: rotate(45deg);
+      width: 260px;
 
-      width: 180px;
+      margin-top: -15px;
 
       color: white;
 
       font-family: 'Fredoka', sans-serif;
-      font-size: 26px;
-      font-weight: 700;
+
+      font-size: 30px;
+      font-weight: 600;
+
+      line-height: 1.15;
 
       text-align: center;
     }
 
+
+    /* KLEINER HOVER-EFFEKT */
+
     .heart-button:hover {
-      transform: rotate(-45deg) scale(1.05);
+      transform: scale(1.05);
+    }
+
+
+    /* HANDY */
+
+    @media (max-width: 600px) {
+
+      .site-title {
+        padding-top: 40px;
+
+        font-size: 15vw;
+      }
+
+      .heart-wrapper {
+        margin-top: 100px;
+      }
+
+      .heart-button {
+        transform: scale(0.8);
+      }
+
+      .heart-button:hover {
+        transform: scale(0.84);
+      }
     }
 
   </style>
@@ -130,10 +162,20 @@
     TESTWEBSITE
   </h1>
 
+
   <div class="heart-wrapper">
 
-    <button class="heart-button">
-      <span>Schön, dass Du da bist!</span>
+    <button
+      class="heart-button"
+      type="button"
+      aria-label="Schön, dass Du da bist!"
+    >
+
+      <span>
+        Schön, dass Du<br>
+        da bist!
+      </span>
+
     </button>
 
   </div>
