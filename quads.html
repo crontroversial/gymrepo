@@ -17,8 +17,6 @@
 
   <style>
 
-    /* GRUNDEINSTELLUNGEN */
-
     * {
       box-sizing: border-box;
     }
@@ -56,14 +54,51 @@
     }
 
 
+    /* INHALT */
+
+    .content {
+      width: 100%;
+
+      padding: 50px 60px;
+
+      display: flex;
+
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+
+    /* ANATOMIE-BILD */
+
+    .anatomy-image {
+      width: 430px;
+      max-width: 42vw;
+
+      height: auto;
+
+      display: block;
+    }
+
+
     /* HANDY */
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
 
       .site-title {
         padding-top: 40px;
 
         font-size: 12vw;
+      }
+
+      .content {
+        padding: 40px 20px;
+
+        justify-content: center;
+      }
+
+      .anatomy-image {
+        width: 90%;
+        max-width: 430px;
       }
 
     }
@@ -78,6 +113,17 @@
   <h1 class="site-title">
     M. QUADRICEPS FEMORIS
   </h1>
+
+
+  <main class="content">
+
+    <img
+      class="anatomy-image"
+      src="quadriceps.png"
+      alt="Anatomische Darstellung des M. quadriceps femoris"
+    >
+
+  </main>
 
 </body>
 
