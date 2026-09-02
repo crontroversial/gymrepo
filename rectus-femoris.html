@@ -1,1 +1,623 @@
+<!DOCTYPE html>
+<html lang="de">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>M. rectus femoris</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background-color: #D1DCFF;
+
+      font-family: 'Fredoka', sans-serif;
+
+      color: #5F6F9F;
+    }
+
+
+    /* ÜBERSCHRIFT */
+
+    .site-title {
+      margin: 0;
+
+      padding-top: 55px;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      text-align: center;
+
+      color: #91A2D9;
+
+      font-size: clamp(55px, 7vw, 95px);
+      font-weight: 700;
+
+      letter-spacing: -2px;
+      line-height: 0.95;
+
+      text-transform: uppercase;
+    }
+
+
+    /* SEITENINHALT */
+
+    .page-content {
+      width: min(1250px, 92%);
+
+      margin: 55px auto 80px;
+    }
+
+
+    /* ANATOMIE-INFO */
+
+    .muscle-intro {
+      width: min(1000px, 100%);
+
+      margin: 0 auto 65px;
+
+      padding: 36px 42px;
+
+      background: rgba(255, 255, 255, 0.30);
+
+      border: 2px solid rgba(145, 162, 217, 0.25);
+
+      border-radius: 36px;
+
+      box-shadow:
+        0 10px 30px rgba(104, 121, 170, 0.08);
+    }
+
+    .intro-label {
+      display: inline-block;
+
+      margin-bottom: 18px;
+
+      padding: 8px 15px;
+
+      background-color: #91A2D9;
+
+      color: white;
+
+      border-radius: 999px;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      letter-spacing: 0.4px;
+
+      text-transform: uppercase;
+    }
+
+    .intro-title {
+      margin: 0 0 18px;
+
+      color: #91A2D9;
+
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .intro-text {
+      margin: 0;
+
+      color: #64739F;
+
+      font-size: 19px;
+      font-weight: 500;
+
+      line-height: 1.55;
+    }
+
+    .intro-text strong {
+      color: #91A2D9;
+      font-weight: 700;
+    }
+
+
+    /* ÜBUNGSÜBERSCHRIFT */
+
+    .exercise-title {
+      margin: 0 0 35px;
+
+      text-align: center;
+
+      color: #91A2D9;
+
+      font-size: 42px;
+      font-weight: 700;
+
+      letter-spacing: -1px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ÜBUNGSGRID */
+
+    .exercise-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 28px;
+    }
+
+
+    /* ÜBUNGSKARTE */
+
+    .exercise-card {
+      min-height: 280px;
+
+      padding: 30px;
+
+      display: flex;
+      flex-direction: column;
+
+      background: rgba(255, 255, 255, 0.28);
+
+      border: 2px solid rgba(145, 162, 217, 0.25);
+
+      border-radius: 34px;
+
+      box-shadow:
+        0 10px 30px rgba(104, 121, 170, 0.08);
+
+      text-decoration: none;
+
+      color: inherit;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .exercise-card:hover {
+      transform: translateY(-7px) scale(1.02);
+
+      background: rgba(255, 255, 255, 0.43);
+
+      box-shadow:
+        0 16px 36px rgba(104, 121, 170, 0.15);
+    }
+
+
+    /* TAGS */
+
+    .tags {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+
+      padding: 7px 12px;
+
+      background-color: #91A2D9;
+
+      color: white;
+
+      border-radius: 999px;
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.3px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ÜBUNGSNAME */
+
+    .exercise-name {
+      margin: 0 0 15px;
+
+      color: #91A2D9;
+
+      font-size: 27px;
+      font-weight: 700;
+
+      line-height: 1.05;
+    }
+
+
+    /* BESCHREIBUNG */
+
+    .exercise-description {
+      margin: 0;
+
+      color: #64739F;
+
+      font-size: 17px;
+      font-weight: 500;
+
+      line-height: 1.45;
+    }
+
+
+    /* LINK-HINWEIS */
+
+    .exercise-link {
+      margin-top: auto;
+      padding-top: 22px;
+
+      color: #91A2D9;
+
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+
+      .exercise-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+
+    /* HANDY */
+
+    @media (max-width: 650px) {
+
+      .site-title {
+        padding-top: 40px;
+
+        font-size: 12vw;
+      }
+
+      .page-content {
+        width: 92%;
+
+        margin-top: 40px;
+      }
+
+      .muscle-intro {
+        padding: 28px;
+      }
+
+      .intro-title {
+        font-size: 28px;
+      }
+
+      .intro-text {
+        font-size: 17px;
+      }
+
+      .exercise-title {
+        font-size: 32px;
+      }
+
+      .exercise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exercise-card {
+        min-height: auto;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <h1 class="site-title">
+    M. RECTUS FEMORIS
+  </h1>
+
+
+  <main class="page-content">
+
+
+    <!-- ANATOMIE -->
+
+    <section class="muscle-intro">
+
+      <span class="intro-label">
+        zweigelenkiger Quadrizepskopf
+      </span>
+
+      <h2 class="intro-title">
+        Was macht der M. rectus femoris?
+      </h2>
+
+      <p class="intro-text">
+        Der <strong>M. rectus femoris</strong> ist der einzige Kopf des
+        M. quadriceps femoris, der sowohl das Hüft- als auch das Kniegelenk
+        überspannt. Er übernimmt die <strong>Extension des Kniegelenks</strong>
+        und unterstützt gleichzeitig die <strong>Flexion im Hüftgelenk</strong>.
+        Dadurch beeinflusst die Position der Hüfte, in welcher Muskellänge der
+        Rectus femoris arbeitet. Für Bodybuilding und Hypertrophie sind deshalb
+        sowohl direkte Kniestreckung als auch Übungen interessant, bei denen der
+        Muskel unter größerer Länge belastet wird.
+      </p>
+
+    </section>
+
+
+    <!-- ÜBUNGEN -->
+
+    <section>
+
+      <h2 class="exercise-title">
+        Übungen
+      </h2>
+
+
+      <div class="exercise-grid">
+
+
+        <!-- LEG EXTENSION -->
+
+        <a
+          class="exercise-card"
+          href="leg-extension.html"
+        >
+
+          <div class="tags">
+
+            <span class="tag">
+              Isolation
+            </span>
+
+            <span class="tag">
+              Knee Extension
+            </span>
+
+          </div>
+
+          <h3 class="exercise-name">
+            Leg Extension
+          </h3>
+
+          <p class="exercise-description">
+            Direkte Kniestreckung mit hoher lokaler Belastung des Quadrizeps
+            und sehr geringer Beteiligung anderer großer Muskelgruppen.
+          </p>
+
+          <span class="exercise-link">
+            Übung ansehen →
+          </span>
+
+        </a>
+
+
+        <!-- LEAN-BACK LEG EXTENSION -->
+
+        <a
+          class="exercise-card"
+          href="lean-back-leg-extension.html"
+        >
+
+          <div class="tags">
+
+            <span class="tag">
+              Isolation
+            </span>
+
+            <span class="tag">
+              Rectus Bias
+            </span>
+
+            <span class="tag">
+              Lengthened
+            </span>
+
+          </div>
+
+          <h3 class="exercise-name">
+            Lean-Back Leg Extension
+          </h3>
+
+          <p class="exercise-description">
+            Zurückgelehnte Variante des Beinstreckers, bei der die Hüftposition
+            den Rectus femoris in einer größeren Muskellänge arbeiten lässt.
+          </p>
+
+          <span class="exercise-link">
+            Übung ansehen →
+          </span>
+
+        </a>
+
+
+        <!-- REVERSE NORDIC -->
+
+        <a
+          class="exercise-card"
+          href="reverse-nordic.html"
+        >
+
+          <div class="tags">
+
+            <span class="tag">
+              Bodyweight
+            </span>
+
+            <span class="tag">
+              Lengthened
+            </span>
+
+            <span class="tag">
+              Rectus Bias
+            </span>
+
+          </div>
+
+          <h3 class="exercise-name">
+            Reverse Nordic
+          </h3>
+
+          <p class="exercise-description">
+            Knie-dominante Bewegung mit relativ gestreckter Hüfte und starker
+            Belastung des Quadrizeps bei zunehmender Muskellänge.
+          </p>
+
+          <span class="exercise-link">
+            Übung ansehen →
+          </span>
+
+        </a>
+
+
+        <!-- SISSY SQUAT -->
+
+        <a
+          class="exercise-card"
+          href="sissy-squat.html"
+        >
+
+          <div class="tags">
+
+            <span class="tag">
+              Compound
+            </span>
+
+            <span class="tag">
+              Knee Dominant
+            </span>
+
+            <span class="tag">
+              Quad Bias
+            </span>
+
+          </div>
+
+          <h3 class="exercise-name">
+            Sissy Squat
+          </h3>
+
+          <p class="exercise-description">
+            Stark kniedominante Squat-Variante mit wenig Hüftbewegung und hoher
+            lokaler Belastung der Kniestrecker.
+          </p>
+
+          <span class="exercise-link">
+            Übung ansehen →
+          </span>
+
+        </a>
+
+
+        <!-- HACK SQUAT -->
+
+        <a
+          class="exercise-card"
+          href="hack-squat.html"
+        >
+
+          <div class="tags">
+
+            <span class="tag">
+              Compound
+            </span>
+
+            <span class="tag">
+              Quad Bias
+            </span>
+
+            <span class="tag">
+              Loaded
+            </span>
+
+          </div>
+
+          <h3 class="exercise-name">
+            Hack Squat
+          </h3>
+
+          <p class="exercise-description">
+            Stabil geführte Mehrgelenksübung, die hohe Lasten und große
+            Kniebeugung erlaubt und damit hervorragend für Quad-Masse geeignet ist.
+          </p>
+
+          <span class="exercise-link">
+            Übung ansehen →
+          </span>
+
+        </a>
+
+
+        <!-- SMITH MACHINE SQUAT -->
+
+        <a
+          class="exercise-card"
+          href="smith-squat.html"
+        >
+
+          <div class="tags">
+
+            <span class="tag">
+              Compound
+            </span>
+
+            <span class="tag">
+              Quad Bias
+            </span>
+
+            <span class="tag">
+              Stable
+            </span>
+
+          </div>
+
+          <h3 class="exercise-name">
+            Smith Machine Squat
+          </h3>
+
+          <p class="exercise-description">
+            Durch die geführte Bewegung lässt sich der Fokus stark auf
+            Kniebeugung und Quadrizepsbelastung legen, ohne viel Stabilität
+            limitieren zu lassen.
+          </p>
+
+          <span class="exercise-link">
+            Übung ansehen →
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+</body>
+
+</html>
