@@ -37,6 +37,181 @@
 
     .site-title {
       margin: 0;
+      padding-top: 55px;
+
+      text-align: center;
+
+      color: #91A2D9;
+
+      font-size: clamp(70px, 10vw, 130px);
+      font-weight: 700;
+
+      letter-spacing: -2px;
+      line-height: 0.9;
+
+      text-transform: uppercase;
+    }
+
+
+    /* HERZ-BEREICH */
+
+    .heart-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 100px;
+    }
+
+
+    /* HERZ-BUTTON */
+
+    .heart-button {
+      position: relative;
+
+      width: 430px;
+      height: 390px;
+
+      padding: 0;
+
+      border: none;
+      background: transparent;
+
+      cursor: pointer;
+
+      transition: transform 0.2s ease;
+    }
+
+
+    /* SVG-HERZ */
+
+    .heart-button svg {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      display: block;
+    }
+
+
+    /* TEXT IM HERZ */
+
+    .heart-text {
+      position: absolute;
+
+      top: 47%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: 260px;
+
+      color: white;
+
+      font-family: 'Fredoka', sans-serif;
+
+      font-size: 30px;
+      font-weight: 600;
+
+      line-height: 1.15;
+
+      text-align: center;
+
+      z-index: 2;
+    }
+
+
+    /* HOVER */
+
+    .heart-button:hover {
+      transform: scale(1.05);
+    }
+
+
+    /* HANDY */
+
+    @media (max-width: 600px) {
+
+      .site-title {
+        padding-top: 40px;
+        font-size: 15vw;
+      }
+
+      .heart-wrapper {
+        margin-top: 80px;
+      }
+
+      .heart-button {
+        width: 330px;
+        height: 300px;
+      }
+
+      .heart-text {
+        width: 210px;
+        font-size: 24px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <h1 class="site-title">
+    TESTWEBSITE
+  </h1>
+
+
+  <div class="heart-wrapper">
+
+    <button
+      class="heart-button"
+      type="button"
+      aria-label="Schön, dass Du da bist!"
+    >
+
+      <svg
+        viewBox="0 0 500 450"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+
+        <path
+          fill="#91A2D9"
+          d="
+            M250 420
+            C220 390 45 275 45 135
+            C45 55 105 20 165 20
+            C205 20 235 43 250 75
+            C265 43 295 20 335 20
+            C395 20 455 55 455 135
+            C455 275 280 390 250 420
+            Z
+          "
+        />
+
+      </svg>
+
+
+      <span class="heart-text">
+        Schön, dass Du<br>
+        da bist!
+      </span>
+
+    </button>
+
+  </div>
+
+</body>
+
+</html>
+    .site-title {
+      margin: 0;
 
       padding-top: 55px;
 
