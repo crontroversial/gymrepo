@@ -1,86 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Testwebsite</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
   <style>
-   .heart-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  margin-top: 140px;
-}
-
-.heart-button {
-  position: relative;
-
-  width: 260px;
-  height: 230px;
-
-  background: #91A2D9;
-
-  border: none;
-  cursor: pointer;
-
-  transform: rotate(-45deg);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  transition: transform 0.2s ease;
-}
-
-.heart-button::before,
-.heart-button::after {
-  content: "";
-
-  position: absolute;
-
-  width: 260px;
-  height: 230px;
-
-  background: #91A2D9;
-
-  border-radius: 50%;
-}
-
-.heart-button::before {
-  top: -115px;
-  left: 0;
-}
-
-.heart-button::after {
-  top: 0;
-  left: 130px;
-}
-
-.heart-button span {
-  position: relative;
-  z-index: 2;
-
-  transform: rotate(45deg);
-
-  color: white;
-
-  font-family: 'Fredoka', sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-
-  text-align: center;
-
-  width: 180px;
-}
-
-.heart-button:hover {
-  transform: rotate(-45deg) scale(1.05);
-}
     * {
       box-sizing: border-box;
     }
@@ -90,12 +22,10 @@
       min-height: 100vh;
       background-color: #D1DCFF;
       font-family: 'Fredoka', sans-serif;
-      <div class="heart-wrapper">
-  <button class="heart-button">
-    <span>Schön, dass Du da bist!</span>
-  </button>
-</div>
     }
+
+
+    /* ÜBERSCHRIFT */
 
     .site-title {
       margin: 0;
@@ -105,20 +35,109 @@
 
       color: #91A2D9;
 
-      font-size: clamp(70px, 10vw, 110px);
-      font-weight: 900;
+      font-size: clamp(70px, 10vw, 130px);
+      font-weight: 700;
 
       letter-spacing: -2px;
-      line-height: 1;
+      line-height: 0.9;
 
       text-transform: uppercase;
     }
+
+
+    /* HERZ */
+
+    .heart-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 180px;
+    }
+
+    .heart-button {
+      position: relative;
+
+      width: 260px;
+      height: 230px;
+
+      background: #91A2D9;
+
+      border: none;
+      cursor: pointer;
+
+      transform: rotate(-45deg);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      transition: transform 0.2s ease;
+    }
+
+    .heart-button::before,
+    .heart-button::after {
+      content: "";
+
+      position: absolute;
+
+      width: 260px;
+      height: 230px;
+
+      background: #91A2D9;
+
+      border-radius: 50%;
+    }
+
+    .heart-button::before {
+      top: -115px;
+      left: 0;
+    }
+
+    .heart-button::after {
+      top: 0;
+      left: 130px;
+    }
+
+    .heart-button span {
+      position: relative;
+      z-index: 2;
+
+      transform: rotate(45deg);
+
+      width: 180px;
+
+      color: white;
+
+      font-family: 'Fredoka', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+
+      text-align: center;
+    }
+
+    .heart-button:hover {
+      transform: rotate(-45deg) scale(1.05);
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <h1 class="site-title">TESTWEBSITE</h1>
+  <h1 class="site-title">
+    TESTWEBSITE
+  </h1>
+
+  <div class="heart-wrapper">
+
+    <button class="heart-button">
+      <span>Schön, dass Du da bist!</span>
+    </button>
+
+  </div>
 
 </body>
+
 </html>
