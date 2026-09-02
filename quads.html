@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -28,6 +28,8 @@
       background-color: #D1DCFF;
 
       font-family: 'Fredoka', sans-serif;
+
+      color: #5F6F9F;
     }
 
 
@@ -54,25 +56,35 @@
     }
 
 
-    /* INHALT */
+    /* HAUPTINHALT */
 
     .content {
-      width: 100%;
+      width: min(1400px, 94%);
 
-      padding: 50px 60px;
+      margin: 45px auto 0;
 
-      display: flex;
+      display: grid;
 
-      justify-content: flex-start;
-      align-items: flex-start;
+      grid-template-columns: 1fr 1.15fr;
+
+      gap: 70px;
+
+      align-items: start;
     }
 
 
-    /* ANATOMIE-BILD */
+    /* LINKER BEREICH */
+
+    .image-section {
+      display: flex;
+
+      justify-content: center;
+      align-items: flex-start;
+    }
 
     .anatomy-image {
-      width: 430px;
-      max-width: 42vw;
+      width: 100%;
+      max-width: 500px;
 
       height: auto;
 
@@ -80,9 +92,180 @@
     }
 
 
+    /* RECHTER BEREICH */
+
+    .info-section {
+      padding-top: 35px;
+    }
+
+    .info-title {
+      margin: 0 0 35px;
+
+      color: #91A2D9;
+
+      font-size: 40px;
+      font-weight: 700;
+
+      letter-spacing: -1px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* CARD-GRID */
+
+    .card-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+
+    /* ANKLICKBARE CARD */
+
+    .muscle-card {
+      min-height: 210px;
+
+      padding: 28px;
+
+      display: block;
+
+      background: rgba(255, 255, 255, 0.28);
+
+      border: 2px solid rgba(145, 162, 217, 0.25);
+
+      border-radius: 32px;
+
+      box-shadow:
+        0 10px 30px rgba(104, 121, 170, 0.08);
+
+      text-decoration: none;
+
+      color: inherit;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+
+    /* CARD HOVER */
+
+    .muscle-card:hover {
+      transform: translateY(-7px) scale(1.02);
+
+      background: rgba(255, 255, 255, 0.42);
+
+      box-shadow:
+        0 16px 35px rgba(104, 121, 170, 0.16);
+    }
+
+
+    /* MUSKELNAME */
+
+    .muscle-name {
+      margin: 0 0 16px;
+
+      color: #91A2D9;
+
+      font-size: 26px;
+      font-weight: 700;
+
+      line-height: 1.05;
+    }
+
+
+    /* FUNKTION */
+
+    .muscle-function {
+      margin: 0;
+
+      color: #64739F;
+
+      font-size: 18px;
+      font-weight: 500;
+
+      line-height: 1.4;
+    }
+
+
+    /* KLEINES LABEL */
+
+    .label {
+      display: inline-block;
+
+      margin-bottom: 14px;
+
+      padding: 7px 13px;
+
+      background-color: #91A2D9;
+
+      color: white;
+
+      border-radius: 999px;
+
+      font-size: 13px;
+      font-weight: 600;
+
+      letter-spacing: 0.5px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* CLICK-HINWEIS */
+
+    .click-hint {
+      display: block;
+
+      margin-top: 18px;
+
+      color: #91A2D9;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      opacity: 0.8;
+    }
+
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+
+      .content {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+      }
+
+      .image-section {
+        justify-content: center;
+      }
+
+      .anatomy-image {
+        max-width: 480px;
+      }
+
+      .info-section {
+        padding-top: 0;
+      }
+
+      .info-title {
+        text-align: center;
+      }
+
+    }
+
+
     /* HANDY */
 
-    @media (max-width: 700px) {
+    @media (max-width: 650px) {
 
       .site-title {
         padding-top: 40px;
@@ -91,14 +274,25 @@
       }
 
       .content {
-        padding: 40px 20px;
+        width: 92%;
 
-        justify-content: center;
+        margin-top: 35px;
       }
 
       .anatomy-image {
-        width: 90%;
-        max-width: 430px;
+        width: 100%;
+      }
+
+      .info-title {
+        font-size: 32px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .muscle-card {
+        min-height: auto;
       }
 
     }
@@ -117,11 +311,140 @@
 
   <main class="content">
 
-    <img
-      class="anatomy-image"
-      src="quadriceps.png"
-      alt="Anatomische Darstellung des M. quadriceps femoris"
-    >
+
+    <!-- ANATOMIE -->
+
+    <section class="image-section">
+
+      <img
+        class="anatomy-image"
+        src="quadriceps.png"
+        alt="Anatomische Darstellung des M. quadriceps femoris"
+      >
+
+    </section>
+
+
+    <!-- DIE VIER KÖPFE -->
+
+    <section class="info-section">
+
+      <h2 class="info-title">
+        Die vier Köpfe
+      </h2>
+
+
+      <div class="card-grid">
+
+
+        <!-- RECTUS FEMORIS -->
+
+        <a
+          class="muscle-card"
+          href="rectus-femoris.html"
+        >
+
+          <span class="label">
+            zweigelenkig
+          </span>
+
+          <h3 class="muscle-name">
+            M. rectus femoris
+          </h3>
+
+          <p class="muscle-function">
+            Streckt das Knie und unterstützt zusätzlich die Beugung im Hüftgelenk.
+          </p>
+
+          <span class="click-hint">
+            Übungen ansehen →
+          </span>
+
+        </a>
+
+
+        <!-- VASTUS LATERALIS -->
+
+        <a
+          class="muscle-card"
+          href="vastus-lateralis.html"
+        >
+
+          <span class="label">
+            lateral
+          </span>
+
+          <h3 class="muscle-name">
+            M. vastus lateralis
+          </h3>
+
+          <p class="muscle-function">
+            Unterstützt die Kniestreckung und bildet den äußeren Anteil des Quadrizeps.
+          </p>
+
+          <span class="click-hint">
+            Übungen ansehen →
+          </span>
+
+        </a>
+
+
+        <!-- VASTUS MEDIALIS -->
+
+        <a
+          class="muscle-card"
+          href="vastus-medialis.html"
+        >
+
+          <span class="label">
+            medial
+          </span>
+
+          <h3 class="muscle-name">
+            M. vastus medialis
+          </h3>
+
+          <p class="muscle-function">
+            Streckt das Knie und unterstützt die mediale Führung und Stabilisierung der Patella.
+          </p>
+
+          <span class="click-hint">
+            Übungen ansehen →
+          </span>
+
+        </a>
+
+
+        <!-- VASTUS INTERMEDIUS -->
+
+        <a
+          class="muscle-card"
+          href="vastus-intermedius.html"
+        >
+
+          <span class="label">
+            tief
+          </span>
+
+          <h3 class="muscle-name">
+            M. vastus intermedius
+          </h3>
+
+          <p class="muscle-function">
+            Liegt unter dem M. rectus femoris und trägt zur Streckung im Kniegelenk bei.
+          </p>
+
+          <span class="click-hint">
+            Übungen ansehen →
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
 
   </main>
 
